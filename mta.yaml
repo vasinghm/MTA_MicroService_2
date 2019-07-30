@@ -1,0 +1,27 @@
+---
+  ID: "MicroService_2"
+  _schema-version: "2.1"
+  version: "0.0.1"
+  modules: 
+    - 
+      name: "Node_Story_4"
+      type: "nodejs"
+      path: "Node_Story_4"
+      provides: 
+        - 
+          name: "Node_Story_4_api"
+          properties: 
+            url: "${default-url}"
+    - 
+      name: "DB_Story_5"
+      type: "hdb"
+      path: "DB_Story_5"
+      requires: 
+        - 
+          name: "hdi_DB_Story_5"
+  resources: 
+    - 
+      name: "hdi_DB_Story_5"
+      properties: 
+        hdi-container-name: "${service-name}"
+      type: "com.sap.xs.hdi-container"
